@@ -1,3 +1,45 @@
+
 <html>
-<b>Hello!! Welcome world </b>
+
+<style>
+
+  a {
+    color: orange;
+  }
+
+</style>
+
+<script src="https://demobluecanvas1-developer-edition.na162.force.com/lightning/lightning.out.js"></script>
+
+<div data-lightning-out="true"></div>
+
+  <script>
+
+    const appName = 'c:auraOutApp';
+    const componentName = 'c:lwcOut';
+    const lightningEndpoint = 'https://stratfs--vithi.sandbox.lightning.force.com/lightning/lightning.out.js';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+
+    };
+
+    $Lightning.use(
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
+    );
+
+
+  </script>
+
+
 </html>
